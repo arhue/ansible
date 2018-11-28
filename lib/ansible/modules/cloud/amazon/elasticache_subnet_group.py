@@ -98,7 +98,8 @@ def main():
 
     # Retrieve any AWS settings from the environment.
     region, ec2_url, aws_connect_kwargs = get_aws_connection_info(module, boto3=True)
-    import q; q(aws_connect_kwargs)
+    import q
+    q(aws_connect_kwargs)
 
     if not region:
         module.fail_json(msg=str("Either region or AWS_REGION or EC2_REGION environment variable or boto config aws_region or ec2_region must be set."))
