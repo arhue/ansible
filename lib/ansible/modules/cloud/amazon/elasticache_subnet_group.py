@@ -98,13 +98,9 @@ def main():
                 module.fail_json(msg=str("Parameter %s not allowed for state='absent'" % not_allowed))
 
     # Retrieve any AWS settings from the environment.
-<<<<<<< HEAD
     region, ec2_url, aws_connect_kwargs = get_aws_connection_info(module, boto3=True)
     import q
     q(aws_connect_kwargs)
-=======
-    region, ec2_url, aws_connect_kwargs = get_aws_connection_info(module)
->>>>>>> parent of 8fce090318... This PR will fix Issue: 49135 `elasticache_subnet_group`
 
     if not region:
         module.fail_json(msg=str("Either region or AWS_REGION or EC2_REGION environment variable or boto config aws_region or ec2_region must be set."))
